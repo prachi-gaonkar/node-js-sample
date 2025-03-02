@@ -5,13 +5,13 @@ FROM node:slim
 WORKDIR /app
 
 # Copy package.json and package-lock.json (if available) to the container
-COPY node-js-sample/package*.json ./
+COPY package*.json ./
 
 # Install the app dependencies
 RUN npm install
 
 # Copy the rest of the application code to the container
-COPY node-js-sample/ .
+COPY . .
 
 # Expose the port the app will run on
 EXPOSE 5000
